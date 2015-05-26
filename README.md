@@ -2,7 +2,7 @@
 
 A lightweight text editor written in Vala, with advanced features available that can be enabled for advanced users.
 
-###Version: 1.0 (Stable)
+###Version: 1.0.1 (Stable)
 ____
 ###Dependencies
 
@@ -36,4 +36,4 @@ To use the new icons, after having had Journal previously installed, run this co
 
 ###License
 
-Journal is licensed under GPLv2
+Journal is licensed under GPLv2, see COPYING
