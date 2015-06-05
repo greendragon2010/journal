@@ -27,6 +27,7 @@ pkg_check_modules(DEPS REQUIRED
 	json-glib-1.0
 	gtksourceview-3.0
   	libpeas-1.0
+	libpeas-gtk-1.0
 )
 add_definitions(${DEPS_CFLAGS})
 link_libraries(${DEPS_LIBRARIES})
@@ -59,6 +60,7 @@ PACKAGES
     json-glib-1.0
     gtksourceview-3.0
     libpeas-1.0
+    libpeas-gtk-1.0
 OPTIONS
     --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
 )

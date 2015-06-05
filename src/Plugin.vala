@@ -31,16 +31,21 @@ namespace SolusJournal{
 
     }
 
-    public class SolusPluginManager
-    {
+    public class SolusPluginManager{
         private App app;
         Peas.Engine engine;
         Peas.ExtensionSet exts;
 
         public API plugin_iface { private set; public get; }
 
-        public SolusPluginManager (App app)
-        {
+	
+	//Plugin Manager Viewer
+	public void SolusPluginViewer(){
+		//PeasGtk.PluginManagerView PluginViewer = new PeasGtk.PluginManagerView (engine);
+	}
+
+	//Plugin Manager
+        public SolusPluginManager (App app){
             this.app = app;
             plugin_iface = new API (app);
 
@@ -54,20 +59,17 @@ namespace SolusJournal{
             param.value = plugin_iface;
             param.name = "object";
             exts = new Peas.ExtensionSet (engine, typeof(Peas.Activatable), "object", plugin_iface, null);
-            // Load all the plugins found
-            foreach (var plug in engine.get_plugin_list ()) {
-                if (engine.try_load_plugin (plug)) {
-                    debug ("Plugin Loaded:" +plug.get_name ());
-                } else {
-                    warning ("Could not load plugin:" +plug.get_name ());
-                }
-            }
 
             exts.extension_removed.connect(on_extension_removed);
             exts.foreach (extension_foreach);
+		
 
         }
-
+	
+	//Use this to populate the Plugin Viewer(if I read documentation correctly)
+	void populate_popup(Menu menu){
+	
+	}
 
         void extension_foreach (Peas.ExtensionSet set, Peas.PluginInfo info, Peas.Extension extension) {
             debug ("Extension added");

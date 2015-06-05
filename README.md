@@ -10,6 +10,7 @@ ____
 * libsoup-2.4
 * json-glib-1.0
 * gtksourceview-3.0
+* libpeas-1.0
 
 ____
 ###To Build
